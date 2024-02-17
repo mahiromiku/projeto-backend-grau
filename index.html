@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend para API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Frontend para API</h1>
+
+    <h2>Adicionar Item</h2>
+    <input type="text" id="nome" placeholder="Nome do item">
+    <button onclick="adicionarItem()">Adicionar Item</button>
+
+    <h2>Listar Itens</h2>
+    <button onclick="listarItens()">Listar Itens</button>
+    <div id="output"></div>
+
+    <h2>Atualizar Item</h2>
+    <input type="text" id="idUpdate" placeholder="ID do item a ser atualizado">
+    <input type="text" id="nomeUpdate" placeholder="Novo nome do item">
+    <button onclick="atualizarItem()">Atualizar Item</button>
+
+    <h2>Excluir Item</h2>
+    <input type="text" id="idDelete" placeholder="ID do item a ser excluído">
+    <button onclick="excluirItem()">Excluir Item</button>
+
+    <script>
+        function adicionarItem() {
+            const nome = document.getElementById('nome').value;
+
+            if (nome.trim() !== '') {
+                const data = { nome };
+
+                axios.post('http://localhost:3000/itens', data)
+                    .then(response => {
+                        alert(response.data.mensagem);
+                        document.getElementById('nome').value = '';
+                    })
+                    .catch(error => console.error('Erro:', error));
+            } else {
+                alert('Por favor, insira um nome válido.');
+            }
+        }
+
+        function listarItens() {
+            axios.get('http://localhost:3000/itens')
+                .then(response => {
+                    const data = response.data;
+                    const outputDiv = document.getElementById('output');
+                    outputDiv.innerHTML = '';
+
+                    if (data.length > 0) {
+                        data.forEach(item => {
+                            outputDiv.innerHTML += `<p>${item.id}: ${item.nome}</p>`;
+                        });
+                    } else {
+                        outputDiv.innerHTML = '<p>Nenhum item encontrado.</p>';
+                    }
+                })
+                .catch(error => console.error('Erro:', error));
+        }
+
+        function atualizarItem() {
+            const id = document.getElementById('idUpdate').value;
+            const nome = document.getElementById('nomeUpdate').value;
+
+            if (id.trim() !== '' && nome.trim() !== '') {
+                const data = { nome };
+
+                axios.put(`http://localhost:3000/itens/${id}`, data)
+                    .then(response => {
+                        alert(response.data.mensagem);
+                        document.getElementById('idUpdate').value = '';
+                        document.getElementById('nomeUpdate').value = '';
+                    })
+                    .catch(error => console.error('Erro:', error));
+            } else {
+                alert('Por favor, insira um ID e um novo nome válidos.');
+            }
+        }
+
+        function excluirItem() {
+            const id = document.getElementById('idDelete').value;
+
+            if (id.trim() !== '') {
+                axios.delete(`http://localhost:3000/itens/${id}`)
+                    .then(response => {
+                        alert(response.data.mensagem);
+                        document.getElementById('idDelete').value = '';
+                    })
+                    .catch(error => console.error('Erro:', error));
+            } else {
+                alert('Por favor, insira um ID válido.');
+            }
+        }
+    </script>
+</body>
+</html>

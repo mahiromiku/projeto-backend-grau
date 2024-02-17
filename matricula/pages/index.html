@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça agora sua matrícula!</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1 class="title-font">Faculdade #777</h1>
+                <nav>
+                    <input type="text" placeholder="Login">
+                    <input type="password" placeholder="Senha">
+                    <input type="button" value="Enviar">
+                </nav>
+            </div>
+        </header>
+        <section class="register">
+            <form action="#" method="post" class="container" id="enrollment">
+                <h2>Matricule-se</h2>
+                <input type="text" placeholder="Nome Completo" id="name">
+                <input type="text" placeholder="Data De Nascimento" id="birthday">
+                <input type="text" placeholder="Sexo" id="gender">
+                <input type="text" placeholder="Endereço" id="address">
+                <input type="text" placeholder="CPF" id="cpf">
+                <input type="text" placeholder="RG" id="rg">
+                <input type="text" placeholder="Telefone" id="phone">
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <footer>
+            <span>Todos os direitos reservados</span>
+        </footer>
+    </div>
+    <script src="../js/api.js"></script>
+</body>
+</html>

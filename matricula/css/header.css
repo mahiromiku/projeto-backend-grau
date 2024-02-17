@@ -1,0 +1,35 @@
+header{
+    background: var(--primary);
+    color: white;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%;
+}
+
+header nav{
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav input[type=text], header nav input[type=password]{
+    outline: none;
+    padding: 5px 10px;
+}
+
+input[type=button], input[type=submit]{
+    padding: 5px 10px;
+    background: var(--secondary);
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover{
+    color: var(--secondary);
+    background: #fff;
+}
