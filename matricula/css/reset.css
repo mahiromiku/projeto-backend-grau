@@ -25,7 +25,7 @@ html, body{
     font-style: normal;
 }
 
-input, input::placeholder{
+input, input::placeholder, select{
     font-family: "Averia Sans Libre", sans-serif;
 }
 

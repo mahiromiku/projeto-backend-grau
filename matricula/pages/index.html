@@ -15,7 +15,7 @@
     <div class="content">
         <header>
             <div class="container">
-                <h1 class="title-font">Faculdade #777</h1>
+                <h1 class="title-font">Universidade dos Devs</h1>
                 <nav>
                     <input type="text" placeholder="Login">
                     <input type="password" placeholder="Senha">
@@ -24,22 +24,26 @@
             </div>
         </header>
         <section class="register">
-            <form action="#" method="post" class="container" id="enrollment">
+            <form class="container" id="registration">
                 <h2>Matricule-se</h2>
                 <input type="text" placeholder="Nome Completo" id="name">
-                <input type="text" placeholder="Data De Nascimento" id="birthday">
-                <input type="text" placeholder="Sexo" id="gender">
+                <input type="date" placeholder="Data De Nascimento" id="birthday">
+                <select id="gender">
+                    <option value="" disabled selected>Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
                 <input type="text" placeholder="Endereço" id="address">
-                <input type="text" placeholder="CPF" id="cpf">
-                <input type="text" placeholder="RG" id="rg">
-                <input type="text" placeholder="Telefone" id="phone">
-                <input type="submit" value="Enviar">
+                <input type="text" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)">
+                <input type="text" placeholder="RG" id="rg" maxlength="12" oninput="formatarRG(this)">
+                <input type="text" placeholder="Telefone" id="phone" maxlength="15" oninput="formatarTelefone(this)">
+                <input type="submit" value="Enviar" id="submit">
             </form>
         </section>
         <footer>
             <span>Todos os direitos reservados</span>
         </footer>
     </div>
-    <script src="../js/api.js"></script>
+    <script src="../js/post.js"></script>
 </body>
 </html>

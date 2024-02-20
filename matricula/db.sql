@@ -4,7 +4,7 @@ USE faculdade;
 CREATE TABLE matricula(
     id integer auto_increment primary key not null,
     nome_completo varchar(255),
-    data_nascimento DATE,
+    data_nascimento varchar(255),
     sexo varchar(255),
     endereco varchar(255),
     cpf varchar(255),

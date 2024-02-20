@@ -17,30 +17,30 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/alunos/:id?', (req, res) => {
-    const id = req.params
+    const { id } = req.params;
 
-    if(id){
+    if (id) {
         conexao.query('SELECT * FROM matricula WHERE id = ?', [id], (err, results) => {
-            if(err){
-                console.error('Erro ao consultar o banco de dados', err)
-                res.status(500).json({erro: 'Erro ao consultar o banco de dados'})
-            }else if(results.length > 0){
-                res.json(results[0])
-            }else{
-                res.status(404).json({erro: 'Aluno não encontrado'})
+            if (err) {
+                console.error('Erro ao consultar o banco de dados', err);
+                res.status(500).json({ erro: 'Erro ao consultar o banco de dados' });
+            } else if (results.length > 0) {
+                res.json(results[0]);
+            } else {
+                res.status(404).json({ erro: 'Aluno não encontrado' });
             }
-        })
-    }else{
+        });
+    } else {
         conexao.query('SELECT * FROM matricula', (err, results) => {
-            if(err){
-                console.error('Erro ao consultar o banco de dados', err)
-                res.status(500).json({erro: 'Erro ao consultar o banco de dados'})
-            }else{
-                res.json(results)
+            if (err) {
+                console.error('Erro ao consultar o banco de dados', err);
+                res.status(500).json({ erro: 'Erro ao consultar o banco de dados' });
+            } else {
+                res.json(results);
             }
-        })
+        });
     }
-})
+});
 
 app.post('/alunos', (req, res) => {
     const {nomeCompleto, dataNascimento, sexo, endereco, cpf, rg, telefone} = req.body
@@ -70,7 +70,7 @@ app.post('/alunos', (req, res) => {
 })
 
 app.put('/alunos/:id', (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
     const {nomeCompleto, dataNascimento, sexo, endereco, cpf, rg, telefone} = req.body
 
     if(id && nomeCompleto && dataNascimento && sexo && endereco && cpf && rg && telefone){
@@ -90,7 +90,7 @@ app.put('/alunos/:id', (req, res) => {
 })
 
 app.delete('/alunos/:id', (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
 
     if(id){
         conexao.query('DELETE FROM matricula WHERE id = ?', [id], (err, results) => {

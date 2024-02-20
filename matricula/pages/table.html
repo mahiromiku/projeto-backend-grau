@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça agora sua matrícula!</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <div class="container">
+                <h1 class="title-font">Universidade dos Devs</h1>
+                <nav>
+                    <input type="text" placeholder="Login">
+                    <input type="password" placeholder="Senha">
+                    <input type="button" value="Enviar">
+                </nav>
+            </div>
+        </header>
+        <section class="table">
+            <table class="container">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Completo</th>
+                        <th>Data de Nascimento</th>
+                        <th>Sexo</th>
+                        <th>Endereco</th>
+                        <th>CPF</th>
+                        <th>RG</th>
+                        <th>Telefone</th>
+                        <th>Editar</th>
+                        <th>Deletar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="10">Carregando os dados...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <footer>
+            <span>Todos os direitos reservados</span>
+        </footer>
+    </div>
+    <script src="../js/get.js"></script>
+</body>
+</html>
