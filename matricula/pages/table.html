@@ -14,25 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <section class="update">
-        <form class="form-update">
-            <button class="close-update" onclick="closeUpdate()">
-                <img src="../svg/close.svg" alt="close">
-            </button>
-            <input type="text" placeholder="Nome Completo" id="name">
-            <input type="date" placeholder="Data De Nascimento" id="birthday">
-            <select id="gender">
-                <option value="" disabled selected>Sexo</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-            </select>
-            <input type="text" placeholder="Endereço" id="address">
-            <input type="text" placeholder="CPF" id="cpf" maxlength="14" oninput="formatarCPF(this)">
-            <input type="text" placeholder="RG" id="rg" maxlength="12" oninput="formatarRG(this)">
-            <input type="text" placeholder="Telefone" id="phone" maxlength="15" oninput="formatarTelefone(this)">
-            <input type="submit" value="Atualizar" id="submit">
-        </form>
-    </section>
     <div class="content">
         <header>
             <div class="container">

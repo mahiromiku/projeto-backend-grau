@@ -11,18 +11,44 @@
 }
 
 .form-update{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
+    position: relative;
     background: var(--primary);
     padding: 50px 40px;
+    height: 300px;
+    width: 300px;
+    overflow-y: auto;
+}
+
+.form-update label{
+    color: #fff;
+}
+
+.form-update input:not(:last-of-type), .form-update select{
+    margin-bottom: 15px;
 }
 
 .form-update input:not(input[type=submit]), .form-update select{
+    margin-top: 15px;
     width: 100%;
+}
+
+.form-update {
+    scrollbar-width: thin;
+    scrollbar-color: #454045 #000000;
+}
+
+.form-update::-webkit-scrollbar {
+    width: 10px;
+}
+
+.form-update::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.form-update::-webkit-scrollbar-thumb {
+    background-color: #454045;
+    border-radius: 10px;
+    border: 6px solid #ffffff;
 }
 
 .close-update{
