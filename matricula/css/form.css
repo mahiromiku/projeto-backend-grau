@@ -19,19 +19,3 @@ section.register{
     padding: 40px 60px;
     /* height: 499px; */
 }
-
-.register form input, .register form select{
-     outline: none;
-}
-
-.register form input[type=text], .register form select, .register form input[type=date]{
-    padding: 5px 10px;
-}
-
-.register form input[type=submit]{
-    align-self: baseline;
-}
-
-.register form input[type=submit]:hover{
-    border: 1px solid var(--gray);
-}

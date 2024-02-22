@@ -1,0 +1,15 @@
+form input, form select{
+    outline: none;
+}
+
+form input[type=text], form select, form input[type=date]{
+   padding: 5px 10px;
+}
+
+form input[type=submit]{
+   align-self: baseline;
+}
+
+form input[type=submit]:hover{
+   border: 1px solid var(--gray);
+}

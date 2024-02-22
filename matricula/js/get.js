@@ -23,7 +23,7 @@ function getStudents(){
                             </button>
                         </td>
                         <td>
-                            <button>
+                            <button onclick="${deleteStudent(row.id)}">
                                 <img src="../svg/garbage.svg" alt="deletar">
                             </button>
                         </td>
@@ -41,4 +41,20 @@ function getStudents(){
         .catch(error => console.error('Erro:', error))
 }
 
+function deleteStudent(id){
+    axios.delete(`http://localhost:4000/alunos/${id}`)
+        .then(response => response.data)
+        .then(data => {
+            alert(data.mensagem)
+            tableBody.innerHTML = ''
+            getStudents()
+        })
+        .catch(error => console.error(error))
+}
+
 getStudents()
+
+function closeUpdate(){
+    const update = document.querySelector('.update')
+    document.body.removeChild(update)
+}
